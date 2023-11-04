@@ -1,12 +1,14 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
 
-from database import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
-class Table(Base):
+class Organiztions(Base):
     __tablename__ = 'FOP_TOV'
 
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     company_name = Column(String, nullable=False)
     edrpoy_code = Column(Integer, nullable=False)
     cont_name = Column(String, nullable=False)

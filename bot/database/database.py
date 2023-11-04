@@ -1,18 +1,20 @@
 import sqlalchemy
-from sqlalchemy import create_engine, ForeignKey
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Boolean
+
+from bot.database.models.fop_tov import Organiztions
+from bot.database.models.users import User
 
 engine = create_engine('sqlite:///main.db',  echo=False)
+
 Session = sessionmaker(bind=engine)
-
-Base = declarative_base()
-
+session = Session()
 
 
 def create_db():
-    Base.metadata.create_all(engine)
+    Organiztions.__table__.create(bind=engine, checkfirst=True)
+    User.__table__.create(bind=engine, checkfirst=True)
 
 
 

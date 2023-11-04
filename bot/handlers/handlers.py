@@ -8,6 +8,8 @@ router = Router()
 
 @router.message(Command('start'))
 async def start_handler(msg : Message):
-    await msg.answer("Hello, how can I help you?")
+    username = msg.from_user.username
+
+    await msg.answer("main router")
 
 
