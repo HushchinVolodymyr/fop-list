@@ -14,8 +14,9 @@ class User(Base):
     user_lastname = Column(String)
     user_admin = Column(Boolean, default=False)
 
-    def __init__(self, username: str, user_id: int, user_firstname: str,
-                user_lastname: str, user_admin = False):
+    def __init__(self,username: str, user_id: int, user_firstname: str,
+                user_lastname: str, user_admin = False, id = None, ):
+        self.id = id
         self.username = username
         self.user_id = user_id
         self.user_firstname = user_firstname

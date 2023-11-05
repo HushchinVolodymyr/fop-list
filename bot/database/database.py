@@ -8,13 +8,16 @@ from bot.database.models.users import User
 
 engine = create_engine('sqlite:///main.db',  echo=False)
 
+Organiztions.__table__.create(bind=engine, checkfirst=True)
+User.__table__.create(bind=engine, checkfirst=True)
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
 
-def create_db():
-    Organiztions.__table__.create(bind=engine, checkfirst=True)
-    User.__table__.create(bind=engine, checkfirst=True)
+# def create_db():
+#     Organiztions.__table__.create(bind=engine, checkfirst=True)
+#     User.__table__.create(bind=engine, checkfirst=True)
 
 
 

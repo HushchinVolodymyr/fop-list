@@ -19,7 +19,8 @@ class Organiztions(Base):
     notion = Column(String, nullable=True)
 
     def __init__(self, company_name: str, edrpoy_code: int, cont_name: str,
-                 cont_phone_number: str, email: str, adress: str):
+                 cont_phone_number: str, email: str, adress: str, id = None):
+        self.id = id
         self.company_name = company_name
         self.edrpoy_code = edrpoy_code
         self.cont_name = cont_name
