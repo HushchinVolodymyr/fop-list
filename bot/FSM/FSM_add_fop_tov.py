@@ -1,4 +1,3 @@
-from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
 
@@ -13,3 +12,12 @@ class Add_tov_fop_FSM(StatesGroup):
 
 class Get_edrpoy(StatesGroup):
     edrpoy = State()
+
+class Get_notion(StatesGroup):
+    id = State()
+    notion = State()
+
+class Refactor(StatesGroup):
+    object_id = State()
+    element = State()
+    refactor = State()

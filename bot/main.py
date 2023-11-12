@@ -1,8 +1,4 @@
 import asyncio
-import logging
-
-from aiogram import Dispatcher
-from aiogram.fsm.storage.memory import MemoryStorage
 
 from handlers.handlers import router
 from handlers.admin_handlers import admin_router
@@ -18,5 +14,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
     asyncio.run(main())

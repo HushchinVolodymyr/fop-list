@@ -10,7 +10,7 @@ class Organiztions(Base):
 
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     company_name = Column(String, nullable=False)
-    edrpoy_code = Column(Integer, nullable=False)
+    edrpoy_code = Column(String, nullable=False)
     cont_name = Column(String, nullable=False)
     cont_phone_number = Column(String, nullable=False)
     email = Column(String, nullable=False)
